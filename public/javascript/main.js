@@ -76,13 +76,13 @@ let myFonc = function (e) {
     if (splitterMoins[0] !== myInput.value) {
         (parseFloat(splitterMoins[0]) - parseFloat(splitterMoins[1])).toFixed(2).split('.')[1] == '00 '? myInput.value = (parseFloat(splitterMoins[0]) - parseFloat(splitterMoins[1])).toFixed(0): myInput.value =(parseFloat(splitterMoins[0]) - parseFloat(splitterMoins[1])).toFixed(2);
     } else if (splitterPlus[0] !== myInput.value) {  
-        (parseFloat(splitterPLus[0]) - parseFloat(splitterPLus[1])).toFixed(2).split('.')[1] == '00 '? myInput.value = (parseFloat(splitterPLus[0]) - parseFloat(splitterPLus[1])).toFixed(0): myInput.value =(parseFloat(splitterPLus[0]) - parseFloat(splitterPLus[1])).toFixed(2);
+        (parseFloat(splitterPLus[0]) + parseFloat(splitterPLus[1])).toFixed(2).split('.')[1] == '00 '? myInput.value = (parseFloat(splitterPLus[0]) + parseFloat(splitterPLus[1])).toFixed(0): myInput.value =(parseFloat(splitterPLus[0]) + parseFloat(splitterPLus[1])).toFixed(2);
     } else if (splitterFois[0] !== myInput.value) {  
-        (parseFloat(splitterFois[0]) - parseFloat(splitterFois[1])).toFixed(2).split('.')[1] == '00 '? myInput.value = (parseFloat(splitterFois[0]) - parseFloat(splitterFois[1])).toFixed(0): myInput.value =(parseFloat(splitterFois[0]) - parseFloat(splitterFois[1])).toFixed(2);
+        (parseFloat(splitterFois[0]) * parseFloat(splitterFois[1])).toFixed(2).split('.')[1] == '00 '? myInput.value = (parseFloat(splitterFois[0]) * parseFloat(splitterFois[1])).toFixed(0): myInput.value =(parseFloat(splitterFois[0]) * parseFloat(splitterFois[1])).toFixed(2);
     } else if (splitterDivise[0] !== myInput.value) {  
-        (parseFloat(splitterDivise[0]) - parseFloat(splitterDivise[1])).toFixed(2).split('.')[1] == '00 '? myInput.value = (parseFloat(splitterDivise[0]) - parseFloat(splitterDivise[1])).toFixed(0): myInput.value =(parseFloat(splitterDivise[0]) - parseFloat(splitterDivise[1])).toFixed(2);
+        (parseFloat(splitterDivise[0]) / parseFloat(splitterDivise[1])).toFixed(2).split('.')[1] == '00 '? myInput.value = (parseFloat(splitterDivise[0]) / parseFloat(splitterDivise[1])).toFixed(0): myInput.value =(parseFloat(splitterDivise[0]) / parseFloat(splitterDivise[1])).toFixed(2);
     }else if (splitterModulo[0] !== myInput.value) {  
-        (parseFloat(splitterModulo[0]) - parseFloat(splitterModulo[1])).toFixed(2).split('.')[1] == '00 '? myInput.value = (parseFloat(splitterModulo[0]) - parseFloat(splitterModulo[1])).toFixed(0): myInput.value =(parseFloat(splitterModulo[0]) - parseFloat(splitterModulo[1])).toFixed(2);
+        (parseFloat(splitterModulo[0]) % parseFloat(splitterModulo[1])).toFixed(2).split('.')[1] == '00 '? myInput.value = (parseFloat(splitterModulo[0]) % parseFloat(splitterModulo[1])).toFixed(0): myInput.value =(parseFloat(splitterModulo[0]) % parseFloat(splitterModulo[1])).toFixed(2);
     }
 
 }
@@ -108,9 +108,11 @@ document.addEventListener('keydown', (e) => {
          }
          
             
-     }else if (e.key == myDivs[2].children[0].textContent == '=' || e.key == 'Enter') {
+     } else if (e.key == 'Enter') {
+         
          myFonc(e)
-         myInput.value = parseFloat(myInput.value).toFixed(2)
+         document.activeElement.blur();
+         myInput.value = parseFloat(myInput.value)
    }else if (e) {
          for (let z = 0; z < 10; z++){
              if (z == parseInt(e.key)) {
