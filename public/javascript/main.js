@@ -2,16 +2,14 @@ import  {mySection, myBody, i, myDiv, myButton, myDivs, myInput} from "./element
 
 
 myDivs[1].addEventListener('click', (e) => {
-    if (e.target == myDivs[1]) {
-        
+    if (e.target == myDivs[1]) {  
     } else if(e.target.className == "focus"){
         e.target.classList.remove("focus");
     } else {
         for (let i = 0; i < 20; i++) {
           myDivs[1].children[i].classList.remove('focus')
         }
-        e.target.classList.add("focus");
-        
+        e.target.classList.add("focus"); 
     }
 })
 
@@ -20,8 +18,6 @@ myDivs[1].addEventListener('click', (e) => {
 let myEgal = myDivs[2].appendChild(document.createElement('button'));
 myEgal.textContent = "=";
 myEgal.style = "background-color: purple; width : 100%; height: 100%; border-radius: 1rem;"
-
-
 myBody.append(mySection)
 
 
@@ -70,22 +66,18 @@ let myFonc = function (e) {
         myDivs[2].children[0].style.backgroundColor = "#FFB1BB"
     }
    
-    if (splitterMoins[0] !== myInput.value) {  
-       
-       
-        (parseInt(splitterMoins[0]) - parseInt(splitterMoins[1])).toFixed(2).split('.')[0] == 0 &&  parseInt(myInput.value).toFixed(2).split('.')[1]== 0 ? myInput.value = (parseInt(splitterMoins[0]) - parseInt(splitterMoins[1])).toFixed(0): myInput.value =(parseInt(splitterMoins[0]) - parseInt(splitterMoins[1])).toFixed(2);
+    if (splitterMoins[0] !== myInput.value) {
+        (parseFloat(splitterMoins[0]) - parseFloat(splitterMoins[1])).toFixed(2).split('.')[1] == '00 '? myInput.value = (parseFloat(splitterMoins[0]) - parseFloat(splitterMoins[1])).toFixed(0): myInput.value =(parseFloat(splitterMoins[0]) - parseFloat(splitterMoins[1])).toFixed(2);
     } else if (splitterPlus[0] !== myInput.value) {  
-        myInput.value =( parseInt(splitterPlus[0]) + parseInt(splitterPlus[1] )).toFixed(2)
+        (parseFloat(splitterPLus[0]) - parseFloat(splitterPLus[1])).toFixed(2).split('.')[1] == '00 '? myInput.value = (parseFloat(splitterPLus[0]) - parseFloat(splitterPLus[1])).toFixed(0): myInput.value =(parseFloat(splitterPLus[0]) - parseFloat(splitterPLus[1])).toFixed(2);
     } else if (splitterFois[0] !== myInput.value) {  
-        myInput.value = (splitterFois[0] * splitterFois[1] ).toFixed(2)
+        (parseFloat(splitterFois[0]) - parseFloat(splitterFois[1])).toFixed(2).split('.')[1] == '00 '? myInput.value = (parseFloat(splitterFois[0]) - parseFloat(splitterFois[1])).toFixed(0): myInput.value =(parseFloat(splitterFois[0]) - parseFloat(splitterFois[1])).toFixed(2);
     } else if (splitterDivise[0] !== myInput.value) {  
-        myInput.value = (splitterDivise[0] / splitterDivise[1] ).toFixed(2)
+        (parseFloat(splitterDivise[0]) - parseFloat(splitterDivise[1])).toFixed(2).split('.')[1] == '00 '? myInput.value = (parseFloat(splitterDivise[0]) - parseFloat(splitterDivise[1])).toFixed(0): myInput.value =(parseFloat(splitterDivise[0]) - parseFloat(splitterDivise[1])).toFixed(2);
     }else if (splitterModulo[0] !== myInput.value) {  
-        myInput.value = (parseInt(splitterModulo[0]) % parseInt(splitterModulo[1] ))
+        (parseFloat(splitterModulo[0]) - parseFloat(splitterModulo[1])).toFixed(2).split('.')[1] == '00 '? myInput.value = (parseFloat(splitterModulo[0]) - parseFloat(splitterModulo[1])).toFixed(0): myInput.value =(parseFloat(splitterModulo[0]) - parseFloat(splitterModulo[1])).toFixed(2);
     }
 
-
-    
 }
 
 
@@ -102,15 +94,15 @@ document.addEventListener('keydown', (e) => {
          }
          
             
-     }else if (e) {
+     }else if (e.key == myDivs[2].children[0].textContent || e.key == 'Enter') {
+        myFonc(e)
+   }else if (e) {
          for (let z = 0; z < 10; z++){
              if (z == parseInt(e.key)) {
                 myInput.value += e.key 
              } 
          } 
-     } else if (e.key == myDivs[2].children[0].textContent) {
-         myFonc(e)
-    }
+     } 
     console.log((e.key));
 })    
 
@@ -124,3 +116,4 @@ myDivs[2].children[0].addEventListener('click', myFonc)
 
 
 
+console.log(parseFloat(32.456).toFixed(2));
