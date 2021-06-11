@@ -99,8 +99,18 @@ let myFonc = function (e) {
 document.addEventListener('keydown', (e) => {
     myDivs[2].children[0].style.backgroundColor = "purple";
      if (e.key == ",") {
+        alert("Fanny refuse les virgules")
+     } else if(e.key == "ArrowLeft" || e.key == "ArrowRight"){
+
+        myInput.focus() 
         
+                console.log(myInput.value.slice(0, e.target.selectionStart) + e.target.textContent + myInput.value.slice(e.target.selectionStart, myInput.value.length));
+                
+          
+         
+         
      } else if (myOperators.includes(e.key)) {
+            document.activeElement.blur();
             if ((myInput.value.split(e.key)).length >= 2) {
                 myFonc(e)
                 myInput.value = `${Math.round(parseInt((myInput.value)))}${e.key}`
@@ -109,11 +119,16 @@ document.addEventListener('keydown', (e) => {
          }
          
             
+     } else if (e.key == "Backspace") {
+         document.activeElement.blur();
+         myInput.focus()
+        
      } else if (e.key == 'Enter') {
         document.activeElement.blur();
          myFonc(e)
          myInput.value = parseFloat(myInput.value)
-   }else if (e) {
+     } else if (e) {
+        document.activeElement.blur();
          for (let z = 0; z < 10; z++){
              if (z == parseInt(e.key)) {
                 myInput.value += e.key 
@@ -122,8 +137,6 @@ document.addEventListener('keydown', (e) => {
      } 
     console.log((e.key));
 })    
-
-
 
 myDivs[2].children[0].addEventListener('click', myFonc);
 console.log(parseFloat(32.456).toFixed(2));
