@@ -75,8 +75,9 @@ let myFonc = function (e) {
    
     if (splitterMoins[0] !== myInput.value) {
         (parseFloat(splitterMoins[0]) - parseFloat(splitterMoins[1])).toFixed(2).split('.')[1] == '00 '? myInput.value = (parseFloat(splitterMoins[0]) - parseFloat(splitterMoins[1])).toFixed(0): myInput.value =(parseFloat(splitterMoins[0]) - parseFloat(splitterMoins[1])).toFixed(2);
-    } else if (splitterPlus[0] !== myInput.value) {  
-        (parseFloat(splitterPLus[0]) + parseFloat(splitterPLus[1])).toFixed(2).split('.')[1] == '00 '? myInput.value = (parseFloat(splitterPLus[0]) + parseFloat(splitterPLus[1])).toFixed(0): myInput.value =(parseFloat(splitterPLus[0]) + parseFloat(splitterPLus[1])).toFixed(2);
+    } else if (splitterPlus[0] !== myInput.value) {
+        console.log(splitterPlus[0]);
+        (parseFloat(splitterPlus[0]) + parseFloat(splitterPlus[1])).toFixed(2).split('.')[1] == '00 '? myInput.value = (parseFloat(splitterPlus[0]) + parseFloat(splitterPlus[1])).toFixed(0): myInput.value =(parseFloat(splitterPlus[0]) + parseFloat(splitterPlus[1])).toFixed(2);
     } else if (splitterFois[0] !== myInput.value) {  
         (parseFloat(splitterFois[0]) * parseFloat(splitterFois[1])).toFixed(2).split('.')[1] == '00 '? myInput.value = (parseFloat(splitterFois[0]) * parseFloat(splitterFois[1])).toFixed(0): myInput.value =(parseFloat(splitterFois[0]) * parseFloat(splitterFois[1])).toFixed(2);
     } else if (splitterDivise[0] !== myInput.value) {  
