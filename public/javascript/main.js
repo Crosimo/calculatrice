@@ -108,8 +108,9 @@ document.addEventListener('keydown', (e) => {
          }
          
             
-     }else if (e.key == myDivs[2].children[0].textContent || e.key == 'Enter') {
-        myFonc(e)
+     }else if (e.key == myDivs[2].children[0].textContent == '=' || e.key == 'Enter') {
+         myFonc(e)
+         myInput.value = parseFloat(myInput.value).toFixed(2)
    }else if (e) {
          for (let z = 0; z < 10; z++){
              if (z == parseInt(e.key)) {
