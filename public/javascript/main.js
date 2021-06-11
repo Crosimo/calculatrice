@@ -109,9 +109,8 @@ document.addEventListener('keydown', (e) => {
          
             
      } else if (e.key == 'Enter') {
-         
+        document.activeElement.blur();
          myFonc(e)
-         document.activeElement.blur();
          myInput.value = parseFloat(myInput.value)
    }else if (e) {
          for (let z = 0; z < 10; z++){
