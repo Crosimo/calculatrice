@@ -1,0 +1,12 @@
+.back{
+    background-image: url("../images/backspace.png");
+    background-size: contain;;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    
+}
+
+.focus{
+   
+    border: orange 2px solid;
+}
