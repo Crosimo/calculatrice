@@ -13,12 +13,19 @@ myDivs[1].addEventListener('click', (e) => {
     }
 })
 
-// mettre le egal
+
 
 let myEgal = myDivs[2].appendChild(document.createElement('button'));
 myEgal.textContent = "=";
 myEgal.style = "background-color: purple; width : 100%; height: 100%; border-radius: 1rem;"
 myBody.append(mySection)
+
+
+
+
+// ! clickpress
+
+
 
 
 let myOperators = [ '+', '-', '/', '*', '%']
@@ -81,6 +88,13 @@ let myFonc = function (e) {
 }
 
 
+
+
+// ! Keypress
+
+
+
+
 document.addEventListener('keydown', (e) => {
     myDivs[2].children[0].style.backgroundColor = "purple";
      if (e.key == ",") {
@@ -107,13 +121,6 @@ document.addEventListener('keydown', (e) => {
 })    
 
 
-  
 
-
-
-myDivs[2].children[0].addEventListener('click', myFonc)
-
-
-
-
+myDivs[2].children[0].addEventListener('click', myFonc);
 console.log(parseFloat(32.456).toFixed(2));
